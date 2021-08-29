@@ -15,7 +15,7 @@ function take_snapshot(){
 
     });
 }
-console.log('ml5. version is'+ ml5.version);
+console.log('ml5. version is', ml5.version);
 
 classifier=ml5.imageClassifier('MobileNet',modelLoaded);
 function modelLoaded(){
@@ -27,13 +27,13 @@ function check(){
     classifier.classify(img,gotResult);
 
 }
-function gotResult(results,error){
+function gotResult(error,results){
     if(error){
         console.error(error);
     }
     else{
         console.log(results);
         document.getElementById("object_name").innerHTML=results[0].label;
-        
+
     }
 }
